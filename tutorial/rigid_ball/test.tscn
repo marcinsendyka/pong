@@ -1,0 +1,132 @@
+[gd_scene load_steps=6 format=3 uid="uid://f3ns5lgse712"]
+
+[ext_resource type="PackedScene" uid="uid://bp7lrws8xeeph" path="res://tutorial/rigid_ball/ball.tscn" id="1_ixnwh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g2ghc"]
+bounce = 1.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xlgxi"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n682"]
+size = Vector2(826, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c25rq"]
+size = Vector2(101.246, 662)
+
+[node name="Test" type="Node2D"]
+
+[node name="Labels" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="NoGravLabel" type="Label" parent="Labels"]
+offset_left = 343.0
+offset_top = 132.0
+offset_right = 466.0
+offset_bottom = 155.0
+text = "gravity scale = 0"
+
+[node name="NoGravBounceLinearDamp" type="Label" parent="Labels"]
+offset_left = 677.0
+offset_top = 94.0
+offset_right = 884.0
+offset_bottom = 221.0
+text = "gravity scale = 0
+and Bounce = 1
+and linear/angular
+	 Damp = Replace
+and friction = 0"
+
+[node name="NoGravBounce" type="Label" parent="Labels"]
+offset_left = 512.0
+offset_top = 125.0
+offset_right = 635.0
+offset_bottom = 174.0
+text = "gravity scale = 0
+ and Bounce = 1"
+
+[node name="Vanilla" type="Label" parent="Labels"]
+offset_left = 145.0
+offset_top = 131.0
+offset_right = 300.0
+offset_bottom = 174.0
+text = "Vanilla RigidBody2D
+"
+
+[node name="VanillaBall" parent="." instance=ExtResource("1_ixnwh")]
+visible = false
+position = Vector2(222, 241)
+initial_impulse_vector = Vector2(0, 200)
+
+[node name="BallNoGravity" parent="." instance=ExtResource("1_ixnwh")]
+visible = false
+position = Vector2(400, 244)
+gravity_scale = 0.0
+initial_impulse_vector = Vector2(0, 200)
+
+[node name="BallNoGravityBouncing" parent="." instance=ExtResource("1_ixnwh")]
+position = Vector2(571, 238)
+physics_material_override = SubResource("PhysicsMaterial_g2ghc")
+gravity_scale = 0.0
+initial_impulse_vector = Vector2(0, 200)
+
+[node name="BallNoGravityBouncingReplaceDamp" parent="." instance=ExtResource("1_ixnwh")]
+visible = false
+position = Vector2(746, 240)
+physics_material_override = SubResource("PhysicsMaterial_xlgxi")
+gravity_scale = 0.0
+linear_damp_mode = 1
+angular_damp_mode = 1
+initial_impulse_vector = Vector2(0, 200)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+offset_left = 99.0
+offset_top = 543.0
+offset_right = 945.0
+offset_bottom = 636.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(527, 589)
+shape = SubResource("RectangleShape2D_1n682")
+
+[node name="Ceiling" type="StaticBody2D" parent="."]
+position = Vector2(430.535, 38.4289)
+
+[node name="ColorRect" type="ColorRect" parent="Ceiling"]
+offset_left = -321.0
+offset_top = -44.0
+offset_right = 503.0
+offset_bottom = 49.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+position = Vector2(96.4645, 2.57106)
+shape = SubResource("RectangleShape2D_1n682")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2(1049, 123)
+
+[node name="ColorRect" type="ColorRect" parent="Wall2"]
+offset_left = -118.0
+offset_top = -121.0
+offset_right = -17.0
+offset_bottom = 513.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(-67, 184)
+shape = SubResource("RectangleShape2D_c25rq")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(19.7145, 94.552)
+
+[node name="ColorRect" type="ColorRect" parent="Wall"]
+offset_left = -3.0
+offset_top = -109.0
+offset_right = 98.0
+offset_bottom = 542.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(47.2855, 217.448)
+shape = SubResource("RectangleShape2D_c25rq")
