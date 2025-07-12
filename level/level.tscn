@@ -1,18 +1,18 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgicj5q0sxoy8"]
 
-[ext_resource type="Script" path="res://level/level.gd" id="1_0rqhf"]
+[ext_resource type="Script" uid="uid://dc78ghyerme77" path="res://level/level.gd" id="1_0rqhf"]
 [ext_resource type="PackedScene" uid="uid://c802iocdubl7g" path="res://paddle/paddle.tscn" id="2_bea42"]
-[ext_resource type="PackedScene" uid="uid://b7h1r0dlm15s2" path="res://ball/ball.tscn" id="2_yk3ua"]
+[ext_resource type="PackedScene" uid="uid://kn4v83h0y2qf" path="res://tutorial/character_ball/character_ball.tscn" id="2_frfgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvqwg"]
-size = Vector2(218, 680)
+size = Vector2(218, 561)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vu5y"]
 size = Vector2(1150, 30)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0rqhf")
-ball = ExtResource("2_yk3ua")
+ball = ExtResource("2_frfgy")
 
 [node name="FieldFrame" type="CanvasLayer" parent="."]
 layer = -1
@@ -70,14 +70,14 @@ player = 1
 position = Vector2(-211, 55)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal"]
-position = Vector2(97, 284)
+position = Vector2(100, 261.5)
 shape = SubResource("RectangleShape2D_dvqwg")
 
 [node name="RightGoal" type="Area2D" parent="."]
 position = Vector2(1154.78, 2.94041)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal"]
-position = Vector2(107.22, 325.06)
+position = Vector2(106.22, 316.06)
 shape = SubResource("RectangleShape2D_dvqwg")
 
 [node name="Walls" type="StaticBody2D" parent="."]

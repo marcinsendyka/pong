@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxksp4all42xj"]
+
+[ext_resource type="PackedScene" uid="uid://0s0satkygrp2" path="res://tutorial/area_ball/area_ball.tscn" id="1_o3sbs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1n682"]
+size = Vector2(826, 93)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c25rq"]
+size = Vector2(101.246, 662)
+
+[node name="Test" type="Node2D"]
+
+[node name="Labels" type="CanvasLayer" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+offset_left = 99.0
+offset_top = 543.0
+offset_right = 945.0
+offset_bottom = 636.0
+color = Color(1, 0.458824, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(527, 589)
+shape = SubResource("RectangleShape2D_1n682")
+
+[node name="Ceiling" type="StaticBody2D" parent="."]
+position = Vector2(430.535, 38.4289)
+
+[node name="ColorRect" type="ColorRect" parent="Ceiling"]
+offset_left = -321.0
+offset_top = -44.0
+offset_right = 503.0
+offset_bottom = 49.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+position = Vector2(96.4645, 2.57106)
+shape = SubResource("RectangleShape2D_1n682")
+
+[node name="Wall2" type="StaticBody2D" parent="."]
+position = Vector2(1049, 123)
+
+[node name="ColorRect" type="ColorRect" parent="Wall2"]
+offset_left = -118.0
+offset_top = -121.0
+offset_right = -17.0
+offset_bottom = 513.0
+color = Color(1, 0.47451, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(-67, 184)
+shape = SubResource("RectangleShape2D_c25rq")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(19.7145, 94.552)
+
+[node name="ColorRect" type="ColorRect" parent="Wall"]
+offset_left = -3.0
+offset_top = -109.0
+offset_right = 98.0
+offset_bottom = 542.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(47.2855, 217.448)
+shape = SubResource("RectangleShape2D_c25rq")
+
+[node name="AreaBall" parent="." instance=ExtResource("1_o3sbs")]
+position = Vector2(213, 139)

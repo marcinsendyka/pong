@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bp7lrws8xeeph"]
 
-[ext_resource type="Script" path="res://tutorial/rigid_ball/ball.gd" id="1_lhyk6"]
+[ext_resource type="Script" uid="uid://bwgqr5th72rh5" path="res://tutorial/rigid_ball/rigid_ball.gd" id="1_lhyk6"]
 [ext_resource type="Texture2D" uid="uid://dog24qkdl8c1g" path="res://ball/ball.png" id="2_i7s1u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ojmne"]

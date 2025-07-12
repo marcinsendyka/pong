@@ -7,8 +7,10 @@ func _ready() -> void:
 	
 func _on_body_entered(_body) -> void:
 	if linear_velocity.length() < 500:
+		print_debug("Speeding up ball on X axis")
 		apply_central_impulse(linear_velocity.normalized() * 82)
 	if linear_velocity.normalized().y > 0.95:
+		print_debug("Speeding up ball on Y axis")
 		var multiplier
 		if linear_velocity.x > 0:
 			multiplier = 1
