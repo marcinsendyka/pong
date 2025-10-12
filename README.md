@@ -9,5 +9,13 @@ Then, I looked at various resources and improved the project.
 ### Running 
 To run the project, Godot 4.5 is required. Just import the project into the Godot Editor and run the main scene (Game).
 
+### In depth description
+
+I documented some parts of the project on [small blog](https://gamedev-journal.xyz/posts/pong-project/) I created. 
+Feel free to read these to learn more about node choices, explanation how / why some snippet works etc.
+
+## Tutorials
+
+in `tutorials/` directory you can find some sample scenes, showcasing nodes behavior. These are explained on the blog. 
 
 [1] https://github.com/godotengine/godot-demo-projects/tree/master/2d/pong 
