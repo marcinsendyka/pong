@@ -7,7 +7,7 @@ Then, I looked at various resources and improved the project.
 
 
 ### Running 
-To run the project, Godot 4.3 is required. Just import the project into the Godot Editor and run the main scene (Level).
+To run the project, Godot 4.5 is required. Just import the project into the Godot Editor and run the main scene (Game).
 
 
 [1] https://github.com/godotengine/godot-demo-projects/tree/master/2d/pong 
