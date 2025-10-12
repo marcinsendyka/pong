@@ -11,10 +11,12 @@ config_version=5
 [application]
 
 config/name="pong"
-run/main_scene="res://level/level.tscn"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+run/main_scene="res://game/game.tscn"
+config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0.0562916, 0.0562916, 0.0562916, 1)
+boot_splash/image="uid://cuxjyodds02cv"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=2000
 
 [editor]
 

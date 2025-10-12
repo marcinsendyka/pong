@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgicj5q0sxoy8"]
 
-[ext_resource type="Script" uid="uid://dc78ghyerme77" path="res://level/level.gd" id="1_0rqhf"]
-[ext_resource type="PackedScene" uid="uid://c802iocdubl7g" path="res://paddle/paddle.tscn" id="2_bea42"]
-[ext_resource type="PackedScene" uid="uid://kn4v83h0y2qf" path="res://tutorial/character_ball/character_ball.tscn" id="2_frfgy"]
+[ext_resource type="Script" uid="uid://dc78ghyerme77" path="res://game/game.gd" id="1_h7iqs"]
+[ext_resource type="PackedScene" uid="uid://kn4v83h0y2qf" path="res://tutorial/character_ball/character_ball.tscn" id="2_4fuuu"]
+[ext_resource type="PackedScene" uid="uid://c802iocdubl7g" path="res://paddle/paddle.tscn" id="3_dxrkv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvqwg"]
 size = Vector2(218, 561)
@@ -11,8 +11,8 @@ size = Vector2(218, 561)
 size = Vector2(1150, 30)
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_0rqhf")
-ball = ExtResource("2_frfgy")
+script = ExtResource("1_h7iqs")
+ball = ExtResource("2_4fuuu")
 
 [node name="FieldFrame" type="CanvasLayer" parent="."]
 layer = -1
@@ -59,10 +59,10 @@ offset_right = 1152.0
 offset_bottom = 563.0
 color = Color(0.180005, 0.180005, 0.180005, 1)
 
-[node name="LeftPaddle" parent="." instance=ExtResource("2_bea42")]
+[node name="LeftPaddle" parent="." instance=ExtResource("3_dxrkv")]
 position = Vector2(150, 250)
 
-[node name="RightPaddle" parent="." instance=ExtResource("2_bea42")]
+[node name="RightPaddle" parent="." instance=ExtResource("3_dxrkv")]
 position = Vector2(1000, 250)
 player = 1
 
