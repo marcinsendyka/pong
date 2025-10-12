@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0kd3ckwtftuq"]
+
+[ext_resource type="Script" uid="uid://chi17cbq24uja" path="res://tutorial/paddle/area/area.gd" id="1_101r1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdsax"]
+size = Vector2(37, 112)
+
+[node name="AreaPaddle" type="Area2D"]
+script = ExtResource("1_101r1")
+speed = null
+player = null
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, 1)
+polygon = PackedVector2Array(37, -1, 37, 111, 0, 111, 0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18.5, 56)
+shape = SubResource("RectangleShape2D_cdsax")

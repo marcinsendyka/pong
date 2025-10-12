@@ -6,15 +6,15 @@ Initially, I did not use many tutorials or even the example Pong game [1] to fig
 Then, I looked at various resources and improved the project.
 
 
-### Running 
+## Running 
 To run the project, Godot 4.5 is required. Just import the project into the Godot Editor and run the main scene (Game).
 
-### In depth description
+## In depth description
 
 I documented some parts of the project on [small blog](https://gamedev-journal.xyz/posts/pong-project/) I created. 
 Feel free to read these to learn more about node choices, explanation how / why some snippet works etc.
 
-## Tutorials
+### Tutorials
 
 in `tutorials/` directory you can find some sample scenes, showcasing nodes behavior. These are explained on the blog. 
 

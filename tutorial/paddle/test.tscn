@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwc8l57g183bp"]
+
+[ext_resource type="PackedScene" uid="uid://dtss2qjd0pq66" path="res://tutorial/paddle/character_body/character_paddle.tscn" id="1_bthum"]
+[ext_resource type="PackedScene" uid="uid://d0kd3ckwtftuq" path="res://tutorial/paddle/area/area.tscn" id="2_lnbia"]
+[ext_resource type="LabelSettings" uid="uid://buesm3666ode" path="res://tutorial/paddle/label.tres" id="3_lnbia"]
+
+[node name="Test" type="Node2D"]
+
+[node name="CharacterPaddle" parent="." instance=ExtResource("1_bthum")]
+position = Vector2(275, 320)
+
+[node name="AreaPaddle" parent="." instance=ExtResource("2_lnbia")]
+position = Vector2(718, 320)
+
+[node name="Labels" type="CanvasLayer" parent="."]
+
+[node name="AreaLabel" type="Label" parent="Labels"]
+offset_left = 682.0
+offset_top = 235.0
+offset_right = 816.0
+offset_bottom = 258.0
+text = "Area Paddle"
+label_settings = ExtResource("3_lnbia")
+
+[node name="CharacterLabel" type="Label" parent="Labels"]
+offset_left = 230.0
+offset_top = 233.0
+offset_right = 364.0
+offset_bottom = 256.0
+text = "Character Paddle"
+label_settings = ExtResource("3_lnbia")

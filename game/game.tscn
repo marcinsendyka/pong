@@ -65,6 +65,7 @@ position = Vector2(150, 250)
 [node name="RightPaddle" parent="." instance=ExtResource("3_dxrkv")]
 position = Vector2(1000, 250)
 player = 1
+custom_color = Color(0.1882353, 1, 1, 1)
 
 [node name="LeftGoal" type="Area2D" parent="."]
 position = Vector2(-211, 55)
