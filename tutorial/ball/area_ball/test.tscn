@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4lnmh5xltg5y"]
+[gd_scene load_steps=4 format=3 uid="uid://cxksp4all42xj"]
 
-[ext_resource type="PackedScene" uid="uid://kn4v83h0y2qf" path="res://tutorial/character_ball/character_ball.tscn" id="1_k0qcy"]
+[ext_resource type="PackedScene" uid="uid://0s0satkygrp2" path="res://tutorial/ball/area_ball/area_ball.tscn" id="1_o3sbs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1n682"]
 size = Vector2(826, 93)
@@ -19,6 +19,7 @@ offset_left = 99.0
 offset_top = 543.0
 offset_right = 945.0
 offset_bottom = 636.0
+color = Color(1, 0.458824, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(527, 589)
@@ -45,6 +46,7 @@ offset_left = -118.0
 offset_top = -121.0
 offset_right = -17.0
 offset_bottom = 513.0
+color = Color(1, 0.47451, 1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
 position = Vector2(-67, 184)
@@ -63,5 +65,5 @@ offset_bottom = 542.0
 position = Vector2(47.2855, 217.448)
 shape = SubResource("RectangleShape2D_c25rq")
 
-[node name="CharacterBall" parent="." instance=ExtResource("1_k0qcy")]
-position = Vector2(262, 154)
+[node name="AreaBall" parent="." instance=ExtResource("1_o3sbs")]
+position = Vector2(213, 139)

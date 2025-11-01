@@ -4,7 +4,7 @@ extends Node2D
 var velocity = Vector2(200,200)
 
 func _physics_process(delta) -> void:
-	var collision = move_and_check_collision(global_position, velocity * delta)
+	var collision = move_and_check_collision(global_position, velocity * delta * 4)
 	if collision: # handling collision
 		var normal = collision.normal
 		velocity = velocity.bounce(normal)
@@ -13,6 +13,7 @@ func _physics_process(delta) -> void:
 func move_and_check_collision(pos: Vector2, delta_move: Vector2):
 	var space_state = get_world_2d().direct_space_state
 	var query = PhysicsRayQueryParameters2D.create(pos, pos + delta_move)
+	query.collide_with_areas = true
 	var result = space_state.intersect_ray(query) # checks if there is body in front of the ball
 	if result:
 		return result

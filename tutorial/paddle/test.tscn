@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwc8l57g183bp"]
+[gd_scene load_steps=8 format=3 uid="uid://cwc8l57g183bp"]
 
 [ext_resource type="PackedScene" uid="uid://dtss2qjd0pq66" path="res://tutorial/paddle/character_body/character_paddle.tscn" id="1_bthum"]
 [ext_resource type="PackedScene" uid="uid://d0kd3ckwtftuq" path="res://tutorial/paddle/area/area.tscn" id="2_lnbia"]
 [ext_resource type="LabelSettings" uid="uid://buesm3666ode" path="res://tutorial/paddle/label.tres" id="3_lnbia"]
+[ext_resource type="PackedScene" uid="uid://0s0satkygrp2" path="res://tutorial/ball/area_ball/area_ball.tscn" id="4_ce7kf"]
+[ext_resource type="PackedScene" uid="uid://bp7lrws8xeeph" path="res://tutorial/ball/rigid_ball/rigid_ball.tscn" id="5_wkyql"]
+[ext_resource type="PackedScene" uid="uid://kn4v83h0y2qf" path="res://tutorial/ball/character_ball/character_ball.tscn" id="6_gduru"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wkyql"]
+friction = 0.0
+bounce = 1.0
 
 [node name="Test" type="Node2D"]
 
@@ -11,6 +18,7 @@ position = Vector2(275, 320)
 
 [node name="AreaPaddle" parent="." instance=ExtResource("2_lnbia")]
 position = Vector2(718, 320)
+speed = 2048.0
 
 [node name="Labels" type="CanvasLayer" parent="."]
 
@@ -28,4 +36,44 @@ offset_top = 233.0
 offset_right = 364.0
 offset_bottom = 256.0
 text = "Character Paddle"
+label_settings = ExtResource("3_lnbia")
+
+[node name="AreaBall" parent="." instance=ExtResource("4_ce7kf")]
+position = Vector2(521, 373)
+velocity = Vector2(200, 10)
+
+[node name="Label" type="Label" parent="AreaBall"]
+offset_left = -32.0
+offset_top = -12.0
+offset_right = 37.0
+offset_bottom = 11.0
+text = "Area ball"
+label_settings = ExtResource("3_lnbia")
+
+[node name="RigidBall" parent="." instance=ExtResource("5_wkyql")]
+position = Vector2(570.69727, 339.20663)
+physics_material_override = SubResource("PhysicsMaterial_wkyql")
+gravity_scale = 0.0
+linear_damp_mode = 1
+angular_damp_mode = 1
+initial_impulse_vector = Vector2(-200, 0)
+
+[node name="Label" type="Label" parent="RigidBall"]
+offset_left = -33.0
+offset_top = -11.0
+offset_right = 38.0
+offset_bottom = 12.0
+text = "Rigid Ball"
+label_settings = ExtResource("3_lnbia")
+
+[node name="CharacterBall" parent="." instance=ExtResource("6_gduru")]
+position = Vector2(439.21713, 402.59204)
+SPEED = -200.0
+
+[node name="Label" type="Label" parent="CharacterBall"]
+offset_left = -48.0
+offset_top = -13.0
+offset_right = 62.0
+offset_bottom = 10.0
+text = "Character Ball"
 label_settings = ExtResource("3_lnbia")

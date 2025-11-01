@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://3hxt8eo6067j"]
+[gd_scene load_steps=3 format=3 uid="uid://3hxt8eo6067j"]
 
 [ext_resource type="PackedScene" uid="uid://dtss2qjd0pq66" path="res://tutorial/paddle/character_body/character_paddle.tscn" id="1_bndv5"]
+[ext_resource type="PackedScene" uid="uid://0s0satkygrp2" path="res://tutorial/ball/area_ball/area_ball.tscn" id="2_41cx1"]
 
 [node name="Test" type="Node2D"]
 
 [node name="CharacterPaddle" parent="." instance=ExtResource("1_bndv5")]
 position = Vector2(134, 180)
+
+[node name="AreaBall" parent="." instance=ExtResource("2_41cx1")]
+position = Vector2(585, 221)
+velocity = Vector2(-200, 30)

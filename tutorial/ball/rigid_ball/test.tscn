@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://f3ns5lgse712"]
 
-[ext_resource type="PackedScene" uid="uid://bp7lrws8xeeph" path="res://tutorial/rigid_ball/rigid_ball.tscn" id="1_ixnwh"]
+[ext_resource type="PackedScene" uid="uid://bp7lrws8xeeph" path="res://tutorial/ball/rigid_ball/rigid_ball.tscn" id="1_ixnwh"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g2ghc"]
 bounce = 1.0
