@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var ball: PackedScene
+@export var ball_scene: PackedScene
 var current_ball: Node2D
 @onready
 var left_score_label: Label = $HUD/Control/ScoreLeft
@@ -33,7 +33,7 @@ func _on_right_goal_body_entered(_body: Node2D) -> void:
 	check_score()
 
 func new_ball() -> void:
-	var ball_instance = ball.instantiate()
+	var ball_instance = ball_scene.instantiate()
 	add_child(ball_instance)
 	ball_instance.global_position = Vector2(
 		get_viewport().size.x / 2,

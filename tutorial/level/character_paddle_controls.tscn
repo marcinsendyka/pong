@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://btt2aewwgg4om"]
+
+[ext_resource type="Script" uid="uid://le33va8mf6f3" path="res://tutorial/level/character_paddle_controls.gd" id="1_k1l85"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdsax"]
+size = Vector2(37, 112)
+
+[node name="CharacterPaddle" type="CharacterBody2D"]
+script = ExtResource("1_k1l85")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, 1)
+polygon = PackedVector2Array(37, -1, 37, 111, 0, 111, 0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18.5, 56)
+shape = SubResource("RectangleShape2D_cdsax")

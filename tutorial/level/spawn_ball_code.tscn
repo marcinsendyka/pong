@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://utpcfq7lxyri"]
+
+[ext_resource type="Script" uid="uid://dn3gm5w0pbtm8" path="res://tutorial/level/spawn_ball_code.gd" id="1_t6rct"]
+[ext_resource type="PackedScene" uid="uid://kn4v83h0y2qf" path="res://tutorial/ball/character_ball/character_ball.tscn" id="2_p6n31"]
+
+[node name="SpawnBallCode" type="Node2D"]
+script = ExtResource("1_t6rct")
+ball_scene = ExtResource("2_p6n31")

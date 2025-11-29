@@ -19,5 +19,7 @@ Feel free to read these to learn more about node choices, explanation how / why 
 in `tutorials/` directory you can find some sample scenes, showcasing nodes behavior. These are explained on the blog. 
 
 1. Ball, how to create, few different options in [tutorial/ball](https://github.com/marcinsendyka/pong/tree/main/tutorial/ball). [Related blog post on gamedev-journal blog](https://gamedev-journal.xyz/posts/pong-ball/).
+1. Paddle, how to create, few different options in [tutorial/paddle](https://github.com/marcinsendyka/pong/tree/main/tutorial/paddle). [Related blog post on gamedev-journal blog](https://gamedev-journal.xyz/posts/pong-paddle/).
+1. Level, how to glue toghether Ball, Paddle and detect goal [tutorial/ball](https://github.com/marcinsendyka/pong/tree/main/tutorial/level). [Related blog post on gamedev-journal blog](https://gamedev-journal.xyz/posts/pong-level/).
 
 [1] https://github.com/godotengine/godot-demo-projects/tree/master/2d/pong 
