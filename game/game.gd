@@ -31,6 +31,19 @@ func _on_right_goal_body_entered(_body: Node2D) -> void:
 	update_score(left_score, left_score_label, LEFT_SCORE_PREFIX)
 	remove_ball.call_deferred()
 	check_score()
+	
+func _on_right_goal_area_entered(_area: Area2D) -> void:
+	right_score += 1
+	update_score(right_score, right_score_label, RIGHT_SCORE_PREFIX)
+	check_score()
+	remove_ball.call_deferred()
+	
+func _on_left_goal_area_entered(_area: Area2D) -> void:
+	left_score += 1
+	update_score(left_score, left_score_label, LEFT_SCORE_PREFIX)
+	remove_ball.call_deferred()
+	check_score()
+	
 
 func new_ball() -> void:
 	var ball_instance = ball_scene.instantiate()

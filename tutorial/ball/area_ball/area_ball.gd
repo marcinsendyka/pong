@@ -15,6 +15,6 @@ func move_and_check_collision(pos: Vector2, delta_move: Vector2):
 	var query = PhysicsRayQueryParameters2D.create(pos, pos + delta_move)
 	query.collide_with_areas = true
 	var result = space_state.intersect_ray(query) # checks if there is body in front of the ball
-	if result:
+	if result and (result["collider"].is_in_group("paddle") or result["collider"] is StaticBody2D):
 		return result
 	return null
