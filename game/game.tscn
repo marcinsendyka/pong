@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bgicj5q0sxoy8"]
 
 [ext_resource type="Script" uid="uid://dc78ghyerme77" path="res://game/game.gd" id="1_h7iqs"]
-[ext_resource type="PackedScene" uid="uid://0s0satkygrp2" path="res://tutorial/ball/area_ball/area_ball.tscn" id="2_h7iqs"]
+[ext_resource type="PackedScene" uid="uid://dip6wtf765q7q" path="res://tutorial/ball/original_ball/original_ball.tscn" id="2_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://c802iocdubl7g" path="res://paddle/paddle.tscn" id="3_dxrkv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvqwg"]
@@ -80,7 +80,7 @@ position = Vector2(1154.78, 2.94041)
 position = Vector2(106.22, 316.06)
 shape = SubResource("RectangleShape2D_dvqwg")
 
-[node name="Walls" type="StaticBody2D" parent="." unique_id=628399764]
+[node name="Walls" type="StaticBody2D" parent="." unique_id=628399764 groups=["walls"]]
 
 [node name="Top" type="CollisionShape2D" parent="Walls" unique_id=1170381845]
 position = Vector2(576, 52)
