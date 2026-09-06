@@ -4,8 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://dip6wtf765q7q" path="res://tutorial/ball/original_ball/original_ball.tscn" id="2_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://c802iocdubl7g" path="res://paddle/paddle.tscn" id="3_dxrkv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvqwg"]
-size = Vector2(218, 561)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j1ws8"]
+normal = Vector2(1, 0)
+distance = 108.26
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_h7iqs"]
+normal = Vector2(-1, 0)
+distance = 108.26
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_4fuuu"]
+normal = Vector2(0, 1)
+distance = 13.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6vu5y"]
 size = Vector2(1150, 30)
@@ -71,20 +80,20 @@ position = Vector2(-211, 55)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal" unique_id=781914785]
 position = Vector2(100, 261.5)
-shape = SubResource("RectangleShape2D_dvqwg")
+shape = SubResource("WorldBoundaryShape2D_j1ws8")
 
 [node name="RightGoal" type="Area2D" parent="." unique_id=1595783757]
 position = Vector2(1154.78, 2.94041)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal" unique_id=639089534]
 position = Vector2(106.22, 316.06)
-shape = SubResource("RectangleShape2D_dvqwg")
+shape = SubResource("WorldBoundaryShape2D_h7iqs")
 
 [node name="Walls" type="StaticBody2D" parent="." unique_id=628399764 groups=["walls"]]
 
 [node name="Top" type="CollisionShape2D" parent="Walls" unique_id=1170381845]
 position = Vector2(576, 52)
-shape = SubResource("RectangleShape2D_6vu5y")
+shape = SubResource("WorldBoundaryShape2D_4fuuu")
 
 [node name="Bottom" type="CollisionShape2D" parent="Walls" unique_id=130326319]
 position = Vector2(575, 578)

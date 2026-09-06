@@ -1,53 +1,54 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxloxccvltmp0"]
+[gd_scene format=3 uid="uid://cxloxccvltmp0"]
 
 [ext_resource type="Script" uid="uid://dwbve2kjh4pfp" path="res://tutorial/level/level.gd" id="1_j1ws8"]
 [ext_resource type="PackedScene" uid="uid://btt2aewwgg4om" path="res://tutorial/level/character_paddle_controls.tscn" id="1_x5hhy"]
 [ext_resource type="PackedScene" uid="uid://kn4v83h0y2qf" path="res://tutorial/ball/character_ball/character_ball.tscn" id="2_irlb0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5hhy"]
-size = Vector2(1149.5, 60)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j1ws8"]
+normal = Vector2(0, 1)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1ws8"]
-size = Vector2(68, 650)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_biee3"]
 
-[node name="Level" type="Node2D"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pna7n"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_irlb0"]
+normal = Vector2(-1, 0)
+
+[node name="Level" type="Node2D" unique_id=214649913]
 script = ExtResource("1_j1ws8")
 ball_scene = ExtResource("2_irlb0")
 
-[node name="Left" parent="." instance=ExtResource("1_x5hhy")]
-position = Vector2(130, 268)
-
-[node name="Right" parent="." instance=ExtResource("1_x5hhy")]
+[node name="Right" parent="." unique_id=2029093999 instance=ExtResource("1_x5hhy")]
 position = Vector2(987, 268)
 player = 1
 
-[node name="Top" type="StaticBody2D" parent="."]
-visible = false
+[node name="Left" parent="." unique_id=506465870 instance=ExtResource("1_x5hhy")]
+position = Vector2(130, 268)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
-visible = false
-position = Vector2(575.25, -33)
-shape = SubResource("RectangleShape2D_x5hhy")
+[node name="Top" type="StaticBody2D" parent="." unique_id=885335974]
+position = Vector2(628, 0)
 
-[node name="Bottom" type="StaticBody2D" parent="."]
-visible = false
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top" unique_id=403236750]
+shape = SubResource("WorldBoundaryShape2D_j1ws8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
-position = Vector2(575, 681)
-shape = SubResource("RectangleShape2D_x5hhy")
+[node name="Bottom" type="StaticBody2D" parent="." unique_id=1045261537]
+position = Vector2(598, 648)
 
-[node name="LeftGoal" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=990892483]
+shape = SubResource("WorldBoundaryShape2D_biee3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal"]
-position = Vector2(-36, 326)
-shape = SubResource("RectangleShape2D_j1ws8")
+[node name="LeftGoal" type="Area2D" parent="." unique_id=731577565]
+position = Vector2(-17, 323)
 
-[node name="RightGoal" type="Area2D" parent="."]
-position = Vector2(1151.3914, 1.0915527)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal" unique_id=233861396]
+shape = SubResource("WorldBoundaryShape2D_pna7n")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal"]
-position = Vector2(38.608643, 321.90845)
-shape = SubResource("RectangleShape2D_j1ws8")
+[node name="RightGoal" type="Area2D" parent="." unique_id=766559814]
+position = Vector2(1173, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal" unique_id=1738831180]
+shape = SubResource("WorldBoundaryShape2D_irlb0")
 
 [connection signal="body_entered" from="LeftGoal" to="." method="_on_left_goal_body_entered"]
 [connection signal="body_entered" from="RightGoal" to="." method="_on_right_goal_body_entered"]
