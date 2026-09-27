@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://dmun7vefdnxtx"]
+
+[ext_resource type="Script" uid="uid://cg08ult2bqfwr" path="res://level/level.gd" id="1_5gx2l"]
+[ext_resource type="PackedScene" uid="uid://dip6wtf765q7q" path="res://tutorial/ball/original_ball/original_ball.tscn" id="2_qohg2"]
+[ext_resource type="PackedScene" uid="uid://btt2aewwgg4om" path="res://tutorial/level/character_paddle_controls.tscn" id="3_ktfr2"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j1ws8"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_biee3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pna7n"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_irlb0"]
+normal = Vector2(-1, 0)
+
+[node name="Level" type="Node2D" unique_id=214649913]
+script = ExtResource("1_5gx2l")
+ball_scene = ExtResource("2_qohg2")
+
+[node name="Right" parent="." unique_id=2029093999 groups=["paddle"] instance=ExtResource("3_ktfr2")]
+position = Vector2(987, 268)
+player = 1
+
+[node name="Left" parent="." unique_id=506465870 groups=["paddle"] instance=ExtResource("3_ktfr2")]
+position = Vector2(130, 268)
+
+[node name="Top" type="StaticBody2D" parent="." unique_id=885335974 groups=["walls"]]
+position = Vector2(574, 66)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top" unique_id=403236750]
+shape = SubResource("WorldBoundaryShape2D_j1ws8")
+
+[node name="Bottom" type="StaticBody2D" parent="." unique_id=1045261537 groups=["walls"]]
+position = Vector2(577, 565)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=990892483]
+shape = SubResource("WorldBoundaryShape2D_biee3")
+
+[node name="LeftGoal" type="Area2D" parent="." unique_id=731577565]
+position = Vector2(-17, 323)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal" unique_id=233861396]
+shape = SubResource("WorldBoundaryShape2D_pna7n")
+
+[node name="RightGoal" type="Area2D" parent="." unique_id=766559814]
+position = Vector2(1173, 325)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal" unique_id=1738831180]
+shape = SubResource("WorldBoundaryShape2D_irlb0")
+
+[node name="FieldFrame" type="CanvasLayer" parent="." unique_id=2029930803]
+layer = -1
+
+[node name="Background" type="ColorRect" parent="FieldFrame" unique_id=227180154]
+offset_left = -227.0
+offset_top = -5.0
+offset_right = 1397.0
+offset_bottom = 696.0
+color = Color(0, 0, 0, 1)
+
+[node name="MiddleBar" type="ColorRect" parent="FieldFrame" unique_id=1520985485]
+offset_left = 570.0
+offset_top = 67.0
+offset_right = 582.0
+offset_bottom = 563.0
+color = Color(0.180005, 0.180005, 0.180005, 1)
+
+[node name="TopBar" type="ColorRect" parent="FieldFrame" unique_id=905964844]
+offset_left = 14.0
+offset_top = 67.0
+offset_right = 1140.0
+offset_bottom = 79.0
+color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[node name="LeftBar" type="ColorRect" parent="FieldFrame" unique_id=1185985271]
+offset_left = 2.0
+offset_top = 67.0
+offset_right = 14.0
+offset_bottom = 563.0
+color = Color(0.180005, 0.180005, 0.180005, 1)
+
+[node name="BottomBar" type="ColorRect" parent="FieldFrame" unique_id=833356280]
+offset_left = 14.0
+offset_top = 551.0
+offset_right = 1140.0
+offset_bottom = 563.0
+color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[node name="RightBar" type="ColorRect" parent="FieldFrame" unique_id=1915182815]
+offset_left = 1140.0
+offset_top = 67.0
+offset_right = 1152.0
+offset_bottom = 563.0
+color = Color(0.180005, 0.180005, 0.180005, 1)
+
+[connection signal="area_entered" from="LeftGoal" to="." method="_on_left_goal_area_entered"]
+[connection signal="body_entered" from="LeftGoal" to="." method="_on_left_goal_body_entered"]
+[connection signal="area_entered" from="RightGoal" to="." method="_on_right_goal_area_entered"]
+[connection signal="body_entered" from="RightGoal" to="." method="_on_right_goal_body_entered"]

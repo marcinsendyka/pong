@@ -8,7 +8,6 @@ radius = 6.0
 
 [node name="OriginalBall" type="Area2D" unique_id=1944634637]
 script = ExtResource("1_wkkfd")
-velocity = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=667550567]
 scale = Vector2(0.365, 0.365)
