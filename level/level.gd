@@ -40,11 +40,14 @@ func _left_goal() -> void:
 
 func _reset_ball() -> void:
 	current_ball.queue_free() 
+	await get_tree().create_timer(1.0).timeout
 	call_deferred("create_ball")
 		
 func create_ball() -> void: 
 	var ball_instance = ball_scene.instantiate()
 	ball_instance.global_position = get_ball_initial_position()
+	var angle = deg_to_rad(randf_range(-15, 15))
+	ball_instance.direction = Vector2(1 if MathUtils.randb() else -1, 0).rotated(angle)
 	add_child(ball_instance)
 	current_ball = ball_instance
 	

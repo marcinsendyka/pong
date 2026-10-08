@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dmun7vefdnxtx"]
 
 [ext_resource type="Script" uid="uid://cg08ult2bqfwr" path="res://level/level.gd" id="1_5gx2l"]
-[ext_resource type="PackedScene" uid="uid://dip6wtf765q7q" path="res://tutorial/ball/original_ball/original_ball.tscn" id="2_qohg2"]
-[ext_resource type="PackedScene" uid="uid://btt2aewwgg4om" path="res://tutorial/level/character_paddle_controls.tscn" id="3_ktfr2"]
+[ext_resource type="PackedScene" uid="uid://c84wdi4qidue0" path="res://ball/original_ball.tscn" id="2_qohg2"]
+[ext_resource type="PackedScene" uid="uid://c802iocdubl7g" path="res://paddle/paddle.tscn" id="3_qohg2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j1ws8"]
 normal = Vector2(0, 1)
@@ -19,12 +19,14 @@ normal = Vector2(-1, 0)
 script = ExtResource("1_5gx2l")
 ball_scene = ExtResource("2_qohg2")
 
-[node name="Right" parent="." unique_id=2029093999 groups=["paddle"] instance=ExtResource("3_ktfr2")]
+[node name="Right" parent="." unique_id=172462077 instance=ExtResource("3_qohg2")]
 position = Vector2(987, 268)
+speed = 3000.0
 player = 1
 
-[node name="Left" parent="." unique_id=506465870 groups=["paddle"] instance=ExtResource("3_ktfr2")]
+[node name="Left" parent="." unique_id=765398399 instance=ExtResource("3_qohg2")]
 position = Vector2(130, 268)
+speed = 3000.0
 
 [node name="Top" type="StaticBody2D" parent="." unique_id=885335974 groups=["walls"]]
 position = Vector2(574, 66)

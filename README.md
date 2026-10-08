@@ -11,7 +11,7 @@ Current state of the game after all tutorials is implemented in [game scene](htt
 
 
 ## Running 
-To run the project, Godot 4.5 is required. Just import the project into the Godot Editor and run the main scene (Game).
+To run the project, Godot 4.7 is required. Just import the project into the Godot Editor and run the main scene (Game).
 
 ## In depth description
 
@@ -28,4 +28,4 @@ in `tutorials/` directory you can find some sample scenes, showcasing nodes beha
 1. HUD, display score and countdown before match. [tutorial/hud](https://github.com/marcinsendyka/pong/tree/main/tutorial/hud). [Related blog post on gamedev-journal blog](https://gamedev-journal.xyz/posts/pong/hud/).
 
 
-[1] https://github.com/godotengine/godot-demo-projects/tree/master/2d/pong 
+[1] https://github.com/godotengine/godot-demo-projects/tree/master/2d/pong
