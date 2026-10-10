@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://bgicj5q0sxoy8"]
 
+[ext_resource type="PackedScene" uid="uid://cn43plabifsq1" path="res://game/overlay.tscn" id="1_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://dmun7vefdnxtx" path="res://level/level.tscn" id="3_h7iqs"]
 [ext_resource type="PackedScene" uid="uid://dlf837jf6ntbc" path="res://tutorial/hud/hud.tscn" id="4_4fuuu"]
 
 [node name="Game" type="Node2D" unique_id=1904990237]
+
+[node name="Overlay" parent="." unique_id=602413105 node_paths=PackedStringArray("level") instance=ExtResource("1_h7iqs")]
+level = NodePath("../Level")
 
 [node name="Hud" parent="." unique_id=1135641145 instance=ExtResource("4_4fuuu")]
 
