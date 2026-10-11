@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c84wdi4qidue0"]
 
 [ext_resource type="Script" uid="uid://ccupoufxb1jfg" path="res://ball/original_ball.gd" id="1_omjrk"]
+[ext_resource type="Curve" uid="uid://5ibd3wuosgc5" path="res://ball/curve.tres" id="2_3i452"]
 [ext_resource type="Texture2D" uid="uid://pbk0macf1gg3" path="res://tutorial/ball.png" id="2_w07en"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o05qa"]
@@ -8,6 +9,7 @@ radius = 6.0
 
 [node name="OriginalBall" type="Area2D" unique_id=1944634637]
 script = ExtResource("1_omjrk")
+curve = ExtResource("2_3i452")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=667550567]
 scale = Vector2(0.365, 0.365)
