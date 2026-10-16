@@ -9,7 +9,7 @@ func _ready() -> void:
 		queue_free()
 
 func _process(_delta: float) -> void:
-	if level.current_ball and not level.current_ball.is_queued_for_deletion():
+	if level.current_ball:
 		_ball_velocity(level.current_ball.speed)
 	else:
 		_ball_velocity(0.0)
