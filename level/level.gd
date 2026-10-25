@@ -4,6 +4,8 @@ class_name Level extends Node2D
 var ball_scene: PackedScene
 @export
 var hud: CanvasLayer
+@onready var left_goal_player: AudioStreamPlayer2D = $LeftGoal/AudioStreamPlayer2D
+@onready var right_goal_player: AudioStreamPlayer2D = $RightGoal/AudioStreamPlayer2D
 
 var current_ball: Area2D 
 var score_player_1: int = 0
@@ -32,14 +34,17 @@ func _right_goal() -> void:
 	_reset_ball()
 	score_player_1 += 1
 	hud.set_player1_score(score_player_1)
+	right_goal_player.play()
 	
 func _left_goal() -> void:
 	_reset_ball()
 	score_player_2 += 1
 	hud.set_player2_score(score_player_2)
+	left_goal_player.play()
 
 func _reset_ball() -> void:
 	current_ball.queue_free() 
+	current_ball = null
 	await get_tree().create_timer(1.0).timeout
 	call_deferred("create_ball")
 		

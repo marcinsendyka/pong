@@ -3,9 +3,26 @@
 [ext_resource type="Script" uid="uid://ccupoufxb1jfg" path="res://ball/original_ball.gd" id="1_omjrk"]
 [ext_resource type="Curve" uid="uid://5ibd3wuosgc5" path="res://ball/curve.tres" id="2_3i452"]
 [ext_resource type="Texture2D" uid="uid://pbk0macf1gg3" path="res://tutorial/ball.png" id="2_w07en"]
+[ext_resource type="AudioStream" uid="uid://cju2d47tpcbho" path="res://assets/ball_bounces.tres" id="4_4to4e"]
+[ext_resource type="AudioStream" uid="uid://d2bmrgpx1ijqq" path="res://assets/BiscuitCrunch2.wav" id="5_4to4e"]
+[ext_resource type="AudioStream" uid="uid://caega33n0xd6u" path="res://assets/BiscuitCrunch4.wav" id="6_umr4c"]
+[ext_resource type="AudioStream" uid="uid://bxi2d4pdabsjr" path="res://assets/BiscuitCrunch5.wav" id="7_vqhf7"]
+[ext_resource type="AudioStream" uid="uid://dp0q1iy3sykmo" path="res://assets/BiscuitCrunch6.wav" id="8_w0jnt"]
+[ext_resource type="AudioStream" uid="uid://bfqesi1utfdcd" path="res://assets/BiscuitCrunch7.wav" id="9_jmpec"]
+[ext_resource type="AudioStream" uid="uid://bvg578vrplt1v" path="res://assets/BiscuitCrunch8.wav" id="10_fj3yr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o05qa"]
 radius = 6.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_e61lv"]
+random_pitch = 1.0656005
+streams_count = 6
+stream_0/stream = ExtResource("5_4to4e")
+stream_1/stream = ExtResource("6_umr4c")
+stream_2/stream = ExtResource("7_vqhf7")
+stream_3/stream = ExtResource("8_w0jnt")
+stream_4/stream = ExtResource("9_jmpec")
+stream_5/stream = ExtResource("10_fj3yr")
 
 [node name="OriginalBall" type="Area2D" unique_id=1944634637]
 script = ExtResource("1_omjrk")
@@ -17,6 +34,13 @@ texture = ExtResource("2_w07en")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=363876958]
 shape = SubResource("CircleShape2D_o05qa")
+
+[node name="BounceOnPaddlePlayer" type="AudioStreamPlayer2D" parent="." unique_id=19335331]
+stream = ExtResource("4_4to4e")
+panning_strength = 3.0
+
+[node name="BounceOnWallPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1356846765]
+stream = SubResource("AudioStreamRandomizer_e61lv")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

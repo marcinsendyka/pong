@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cg08ult2bqfwr" path="res://level/level.gd" id="1_5gx2l"]
 [ext_resource type="PackedScene" uid="uid://c84wdi4qidue0" path="res://ball/original_ball.tscn" id="2_qohg2"]
 [ext_resource type="PackedScene" uid="uid://c802iocdubl7g" path="res://paddle/paddle.tscn" id="3_qohg2"]
+[ext_resource type="AudioStream" uid="uid://daof68jcuf8p0" path="res://assets/ArrowPass5.wav" id="4_vkbyq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j1ws8"]
 normal = Vector2(0, 1)
@@ -40,14 +41,21 @@ position = Vector2(577, 565)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=990892483]
 shape = SubResource("WorldBoundaryShape2D_biee3")
 
-[node name="LeftGoal" type="Area2D" parent="." unique_id=731577565]
+[node name="LeftGoal" type="Area2D" parent="." unique_id=731577565 groups=["goal"]]
 position = Vector2(-17, 323)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal" unique_id=233861396]
 shape = SubResource("WorldBoundaryShape2D_pna7n")
 
-[node name="RightGoal" type="Area2D" parent="." unique_id=766559814]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="LeftGoal" unique_id=2007007541]
+stream = ExtResource("4_vkbyq")
+
+[node name="RightGoal" type="Area2D" parent="." unique_id=766559814 groups=["goal"]]
 position = Vector2(1173, 325)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RightGoal" unique_id=399185831]
+position = Vector2(-1190, -2)
+stream = ExtResource("4_vkbyq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal" unique_id=1738831180]
 shape = SubResource("WorldBoundaryShape2D_irlb0")
