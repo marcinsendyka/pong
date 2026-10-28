@@ -40,6 +40,10 @@ paddle=""
 walls=""
 goal=""
 
+[gui]
+
+theme/custom="uid://djwu7itojsu1u"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

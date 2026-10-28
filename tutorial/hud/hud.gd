@@ -27,7 +27,7 @@ func display_countdown() -> void:
 	countdown.visible = false
 
 func set_player1_score(score : int) -> void:
-	left_score_label.text = "Left: " + str(score)
+	left_score_label.text = str(score)
 
 func set_player2_score(score : int) -> void:
-	right_score_label.text = "Right: " + str(score)
+	right_score_label.text = str(score)
