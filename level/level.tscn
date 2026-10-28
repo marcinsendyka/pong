@@ -21,28 +21,28 @@ script = ExtResource("1_5gx2l")
 ball_scene = ExtResource("2_qohg2")
 
 [node name="Right" parent="." unique_id=172462077 instance=ExtResource("3_qohg2")]
-position = Vector2(987, 268)
-speed = 3000.0
+position = Vector2(440, 90)
+speed = 3500.0
 player = 1
 
 [node name="Left" parent="." unique_id=765398399 instance=ExtResource("3_qohg2")]
-position = Vector2(130, 268)
-speed = 3000.0
+position = Vector2(35, 89)
+speed = 3500.0
 
 [node name="Top" type="StaticBody2D" parent="." unique_id=885335974 groups=["walls"]]
-position = Vector2(574, 66)
+position = Vector2(223, 11)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Top" unique_id=403236750]
 shape = SubResource("WorldBoundaryShape2D_j1ws8")
 
 [node name="Bottom" type="StaticBody2D" parent="." unique_id=1045261537 groups=["walls"]]
-position = Vector2(577, 565)
+position = Vector2(240, 258)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=990892483]
 shape = SubResource("WorldBoundaryShape2D_biee3")
 
 [node name="LeftGoal" type="Area2D" parent="." unique_id=731577565 groups=["goal"]]
-position = Vector2(-17, 323)
+position = Vector2(-8, 114)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftGoal" unique_id=233861396]
 shape = SubResource("WorldBoundaryShape2D_pna7n")
@@ -51,10 +51,9 @@ shape = SubResource("WorldBoundaryShape2D_pna7n")
 stream = ExtResource("4_vkbyq")
 
 [node name="RightGoal" type="Area2D" parent="." unique_id=766559814 groups=["goal"]]
-position = Vector2(1173, 325)
+position = Vector2(490, 108)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RightGoal" unique_id=399185831]
-position = Vector2(-1190, -2)
 stream = ExtResource("4_vkbyq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightGoal" unique_id=1738831180]
@@ -64,45 +63,44 @@ shape = SubResource("WorldBoundaryShape2D_irlb0")
 layer = -1
 
 [node name="Background" type="ColorRect" parent="FieldFrame" unique_id=227180154]
-offset_left = -227.0
-offset_top = -5.0
-offset_right = 1397.0
-offset_bottom = 696.0
+offset_left = -277.0
+offset_top = -172.0
+offset_right = 1347.0
+offset_bottom = 529.0
 color = Color(0, 0, 0, 1)
 
 [node name="MiddleBar" type="ColorRect" parent="FieldFrame" unique_id=1520985485]
-offset_left = 570.0
-offset_top = 67.0
-offset_right = 582.0
-offset_bottom = 563.0
+offset_left = 235.0
+offset_top = -118.0
+offset_right = 247.0
+offset_bottom = 378.0
 color = Color(0.180005, 0.180005, 0.180005, 1)
 
 [node name="TopBar" type="ColorRect" parent="FieldFrame" unique_id=905964844]
-offset_left = 14.0
-offset_top = 67.0
-offset_right = 1140.0
-offset_bottom = 79.0
+offset_left = -165.0
+offset_top = -1.0
+offset_right = 961.0
+offset_bottom = 11.0
 color = Color(0.180392, 0.180392, 0.180392, 1)
 
 [node name="LeftBar" type="ColorRect" parent="FieldFrame" unique_id=1185985271]
-offset_left = 2.0
-offset_top = 67.0
-offset_right = 14.0
-offset_bottom = 563.0
+offset_top = -129.0
+offset_right = 12.0
+offset_bottom = 367.0
 color = Color(0.180005, 0.180005, 0.180005, 1)
 
 [node name="BottomBar" type="ColorRect" parent="FieldFrame" unique_id=833356280]
-offset_left = 14.0
-offset_top = 551.0
-offset_right = 1140.0
-offset_bottom = 563.0
+offset_left = -172.0
+offset_top = 258.0
+offset_right = 954.0
+offset_bottom = 270.0
 color = Color(0.180392, 0.180392, 0.180392, 1)
 
 [node name="RightBar" type="ColorRect" parent="FieldFrame" unique_id=1915182815]
-offset_left = 1140.0
-offset_top = 67.0
-offset_right = 1152.0
-offset_bottom = 563.0
+offset_left = 470.0
+offset_top = -154.0
+offset_right = 482.0
+offset_bottom = 342.0
 color = Color(0.180005, 0.180005, 0.180005, 1)
 
 [connection signal="area_entered" from="LeftGoal" to="." method="_on_left_goal_area_entered"]

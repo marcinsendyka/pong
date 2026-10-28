@@ -1,19 +1,24 @@
 [gd_scene format=3 uid="uid://c802iocdubl7g"]
 
 [ext_resource type="Script" uid="uid://dl054obrvmfmw" path="res://paddle/paddle.gd" id="1_fvkb5"]
+[ext_resource type="PackedScene" uid="uid://de2v2futlqn47" path="res://common/retro_movement.tscn" id="2_abfxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_38575"]
-size = Vector2(12, 80)
+size = Vector2(12, 51)
 
 [node name="Paddle" type="CharacterBody2D" unique_id=172462077 groups=["paddle"]]
 script = ExtResource("1_fvkb5")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=289448007]
 scale = Vector2(1, 2.58065)
-polygon = PackedVector2Array(0, 0, 0, 31, 12, 31, 12, 0)
+polygon = PackedVector2Array(0, 0, 0, 20.149961, 12, 20.149961, 12, 0)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1658075677]
-position = Vector2(6, 40)
+position = Vector2(6, 25.5)
 shape = SubResource("RectangleShape2D_38575")
 metadata/_edit_group_ = true
+
+[node name="RetroMovement" parent="." unique_id=149794527 node_paths=PackedStringArray("sprite") instance=ExtResource("2_abfxj")]
+ticks_per_sec = 20
+sprite = NodePath("../Polygon2D")

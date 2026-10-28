@@ -1,19 +1,18 @@
 extends Area2D
 
-const MAX_SPEED = 1000
+const MAX_SPEED = 800
 
-var speed = 300
+var speed = 200
 var speed_increment_on_bounce = 25
 var bounce: float = 1.0
 @export
 var direction = Vector2.LEFT
-
 @export 
 var curve: Curve
 
 @onready var bounce_on_paddle_player: AudioStreamPlayer2D = $BounceOnPaddlePlayer
 @onready var bounce_on_wall_player: AudioStreamPlayer2D = $BounceOnWallPlayer
-
+ 
 func _physics_process(delta) -> void:
 	position += direction * delta * speed
 	
@@ -24,7 +23,6 @@ func _on_body_entered(body: Node2D) -> void:
 	_bounce(body)
 
 func _bounce(collider: Node2D) -> void:
-	
 	var vec: Vector2
 	if collider.is_in_group("walls"):
 		bounce_on_wall_player.play()

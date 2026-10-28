@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var player: int = 0
 
 func _physics_process(delta: float) -> void:
-	velocity -= velocity * delta * 5.0
+	velocity -= velocity * delta * 8.0
 	if player == 0:
 		if Input.is_action_pressed("ui_up"):
 			velocity.y -= speed * delta

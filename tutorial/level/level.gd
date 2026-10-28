@@ -49,7 +49,4 @@ func create_ball() -> void:
 	current_ball = ball_instance
 	
 func get_ball_initial_position() -> Vector2:
-	return Vector2(
-		get_viewport().size.x / 2,
-		get_viewport().size.y / 2
-	)
+	return CanvasUtils.center_of_viewport(get_viewport())

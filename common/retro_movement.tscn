@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://de2v2futlqn47"]
+
+[ext_resource type="Script" uid="uid://bd8kj1ilwjqt3" path="res://common/retro_movement.gd" id="1_6sg2i"]
+
+[node name="RetroMovement" type="Node2D" unique_id=149794527]
+script = ExtResource("1_6sg2i")
