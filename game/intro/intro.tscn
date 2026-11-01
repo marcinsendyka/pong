@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cd3l4q8m7ax6l"]
+
+[ext_resource type="Script" uid="uid://ceu6kf380heus" path="res://game/intro/intro.gd" id="1_fsy43"]
+[ext_resource type="PackedScene" uid="uid://bq5s1ahholprd" path="res://game/main_menu/main_menu.tscn" id="2_fsy43"]
+
+[sub_resource type="Animation" id="Animation_fsy43"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_41kj2"]
+resource_name = "fade_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.0333333, 3),
+"transitions": PackedFloat32Array(2.0705256, 1, 0.40612632, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4gn25"]
+_data = {
+&"RESET": SubResource("Animation_fsy43"),
+&"fade_in": SubResource("Animation_41kj2")
+}
+
+[node name="Intro" type="Control" unique_id=1339597630]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsy43")
+next_scene = ExtResource("2_fsy43")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=616451576]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1925776952]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -19.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer" unique_id=910770407]
+clip_contents = false
+layout_mode = 2
+theme_type_variation = &"SettingsLabel"
+text = "Game by smajlo"
+fit_content = true
+autowrap_mode = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=77547915]
+libraries/ = SubResource("AnimationLibrary_4gn25")
+autoplay = &"fade_in"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

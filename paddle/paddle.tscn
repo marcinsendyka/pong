@@ -22,3 +22,6 @@ metadata/_edit_group_ = true
 [node name="RetroMovement" parent="." unique_id=149794527 node_paths=PackedStringArray("sprite") instance=ExtResource("2_abfxj")]
 ticks_per_sec = 20
 sprite = NodePath("../Polygon2D")
+
+[node name="Middle" type="Node2D" parent="." unique_id=1230081072]
+position = Vector2(5.9615936, 25.436527)

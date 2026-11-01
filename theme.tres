@@ -2,5 +2,36 @@
 
 [ext_resource type="FontFile" uid="uid://km4t4vndqiti" path="res://assets/Press_Start_2P/PressStart2P-Regular.ttf" id="1_e1x85"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bn4et"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjfk0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1.3957917e-06, 0.6606445, 0.2985889, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1x85"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.8, 0.31764707, 0.8, 0)
+
 [resource]
+Button/fonts/font = ExtResource("1_e1x85")
+Button/styles/focus = SubResource("StyleBoxFlat_bn4et")
+Button/styles/hover = SubResource("StyleBoxFlat_bn4et")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_cjfk0")
+Button/styles/normal = SubResource("StyleBoxFlat_e1x85")
+Button/styles/pressed = SubResource("StyleBoxFlat_cjfk0")
 Label/fonts/font = ExtResource("1_e1x85")
+RichTextLabel/fonts/normal_font = ExtResource("1_e1x85")

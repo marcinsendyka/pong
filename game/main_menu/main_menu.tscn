@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bq5s1ahholprd"]
+
+[ext_resource type="Script" uid="uid://bqmxbn3c3qgvd" path="res://game/main_menu/main_menu.gd" id="1_f1bok"]
+[ext_resource type="PackedScene" uid="uid://bgicj5q0sxoy8" path="res://game/game.tscn" id="2_rlutr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bn4et"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control" unique_id=383741278]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f1bok")
+game_scene = ExtResource("2_rlutr")
+
+[node name="Panel" type="Panel" parent="." unique_id=2090507053]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bn4et")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel" unique_id=1440044129]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_right = 32.0
+offset_bottom = 16.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer2" unique_id=475246959]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer2/MarginContainer" unique_id=85112498]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "PONG"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=2043232176]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1122090360]
+layout_mode = 2
+
+[node name="1p" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=1436190392]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_top = NodePath("../2p")
+text = " 1 PLAYER"
+alignment = 0
+
+[node name="2p" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=1439518647]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+focus_neighbor_bottom = NodePath("../1p")
+focus_next = NodePath("../1p")
+text = " 2 PLAYERS"
+alignment = 0
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/1p" to="." method="_on_p_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/2p" to="." method="_on_p2_pressed"]

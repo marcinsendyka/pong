@@ -1,15 +1,25 @@
 class_name Level extends Node2D
 
+signal new_ball(ball: Node2D)
+
 @export
 var ball_scene: PackedScene
 @export
 var hud: CanvasLayer
 @onready var left_goal_player: AudioStreamPlayer2D = $LeftGoal/AudioStreamPlayer2D
 @onready var right_goal_player: AudioStreamPlayer2D = $RightGoal/AudioStreamPlayer2D
+@onready var right: Paddle = $Right
 
 var current_ball: Area2D 
 var score_player_1: int = 0
 var score_player_2: int = 0
+var config: GameConfig:
+	set(val):
+		if val.players_count == 1:
+			var ai = AiFollowPaddleController.new()
+			right.add_child(ai)
+			right.pc = ai
+			new_ball.connect(right.pc.new_ball)
 
 func _ready() -> void:
 	if not hud:
@@ -55,6 +65,7 @@ func create_ball() -> void:
 	ball_instance.direction = Vector2(1 if MathUtils.randb() else -1, 0).rotated(angle)
 	add_child(ball_instance)
 	current_ball = ball_instance
+	new_ball.emit(current_ball)
 	
 func get_ball_initial_position() -> Vector2:
 	return CanvasUtils.center_of_viewport(get_viewport())

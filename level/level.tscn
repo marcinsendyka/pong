@@ -3,7 +3,21 @@
 [ext_resource type="Script" uid="uid://cg08ult2bqfwr" path="res://level/level.gd" id="1_5gx2l"]
 [ext_resource type="PackedScene" uid="uid://c84wdi4qidue0" path="res://ball/original_ball.tscn" id="2_qohg2"]
 [ext_resource type="PackedScene" uid="uid://c802iocdubl7g" path="res://paddle/paddle.tscn" id="3_qohg2"]
+[ext_resource type="Script" uid="uid://c83sdh3aoik6s" path="res://paddle/player_paddle_controller.gd" id="4_ktfr2"]
 [ext_resource type="AudioStream" uid="uid://daof68jcuf8p0" path="res://assets/ArrowPass5.wav" id="4_vkbyq"]
+[ext_resource type="Script" uid="uid://dvj5nd5hlnaip" path="res://paddle/player_controls.gd" id="5_44x8d"]
+
+[sub_resource type="Resource" id="Resource_sp25j"]
+script = ExtResource("5_44x8d")
+action_up = "ui_home"
+action_down = "ui_end"
+metadata/_custom_type_script = "uid://dvj5nd5hlnaip"
+
+[sub_resource type="Resource" id="Resource_44x8d"]
+script = ExtResource("5_44x8d")
+action_up = "ui_up"
+action_down = "ui_down"
+metadata/_custom_type_script = "uid://dvj5nd5hlnaip"
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j1ws8"]
 normal = Vector2(0, 1)
@@ -20,14 +34,26 @@ normal = Vector2(-1, 0)
 script = ExtResource("1_5gx2l")
 ball_scene = ExtResource("2_qohg2")
 
-[node name="Right" parent="." unique_id=172462077 instance=ExtResource("3_qohg2")]
-position = Vector2(440, 90)
+[node name="Right" parent="." unique_id=172462077 node_paths=PackedStringArray("pc") instance=ExtResource("3_qohg2")]
+position = Vector2(435, 90)
 speed = 3500.0
 player = 1
+pc = NodePath("PlayerPaddleController")
 
-[node name="Left" parent="." unique_id=765398399 instance=ExtResource("3_qohg2")]
+[node name="PlayerPaddleController" type="Node2D" parent="Right" unique_id=1964078539]
+script = ExtResource("4_ktfr2")
+_pc = SubResource("Resource_sp25j")
+metadata/_custom_type_script = "uid://c83sdh3aoik6s"
+
+[node name="Left" parent="." unique_id=765398399 node_paths=PackedStringArray("pc") instance=ExtResource("3_qohg2")]
 position = Vector2(35, 89)
 speed = 3500.0
+pc = NodePath("PlayerPaddleController")
+
+[node name="PlayerPaddleController" type="Node2D" parent="Left" unique_id=1422357975]
+script = ExtResource("4_ktfr2")
+_pc = SubResource("Resource_44x8d")
+metadata/_custom_type_script = "uid://c83sdh3aoik6s"
 
 [node name="Top" type="StaticBody2D" parent="." unique_id=885335974 groups=["walls"]]
 position = Vector2(223, 11)
@@ -36,7 +62,7 @@ position = Vector2(223, 11)
 shape = SubResource("WorldBoundaryShape2D_j1ws8")
 
 [node name="Bottom" type="StaticBody2D" parent="." unique_id=1045261537 groups=["walls"]]
-position = Vector2(240, 258)
+position = Vector2(240, 260)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=990892483]
 shape = SubResource("WorldBoundaryShape2D_biee3")
@@ -63,9 +89,9 @@ shape = SubResource("WorldBoundaryShape2D_irlb0")
 layer = -1
 
 [node name="Background" type="ColorRect" parent="FieldFrame" unique_id=227180154]
-offset_left = -277.0
+offset_left = -278.0
 offset_top = -172.0
-offset_right = 1347.0
+offset_right = 1346.0
 offset_bottom = 529.0
 color = Color(0, 0, 0, 1)
 
@@ -91,9 +117,9 @@ color = Color(0.180005, 0.180005, 0.180005, 1)
 
 [node name="BottomBar" type="ColorRect" parent="FieldFrame" unique_id=833356280]
 offset_left = -172.0
-offset_top = 258.0
+offset_top = 258.5
 offset_right = 954.0
-offset_bottom = 270.0
+offset_bottom = 270.5
 color = Color(0.180392, 0.180392, 0.180392, 1)
 
 [node name="RightBar" type="ColorRect" parent="FieldFrame" unique_id=1915182815]
