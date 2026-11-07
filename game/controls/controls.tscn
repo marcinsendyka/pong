@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://dlgw1jw5l2h21"]
+
+[ext_resource type="Script" uid="uid://b6fqitw0pkp6d" path="res://game/controls/controls.gd" id="1_7fuu1"]
+[ext_resource type="PackedScene" uid="uid://x5tsdqvvfd3q" path="res://game/controls/key_panel.tscn" id="1_wuelf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_outug"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Controls" type="Control" unique_id=2107071764]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7fuu1")
+metadata/_edit_vertical_guides_ = [-104.0]
+
+[node name="Panel" type="Panel" parent="." unique_id=2119485012]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_outug")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel" unique_id=945698415]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer2" unique_id=2135930502]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer2/MarginContainer" unique_id=2139847486]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "CONTROLS"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer2" unique_id=881446597]
+layout_mode = 2
+
+[node name="Player1" type="VBoxContainer" parent="Panel/VBoxContainer2/HBoxContainer" unique_id=1152845591]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 13
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer2/HBoxContainer/Player1" unique_id=1439581113]
+layout_mode = 2
+text = "PLAYER 1"
+horizontal_alignment = 1
+
+[node name="P1KeyPanelUp" parent="Panel/VBoxContainer2/HBoxContainer/Player1" unique_id=218299466 instance=ExtResource("1_wuelf")]
+unique_name_in_owner = true
+layout_mode = 2
+action = &"player1_up"
+
+[node name="P1KeyPanelDown" parent="Panel/VBoxContainer2/HBoxContainer/Player1" unique_id=1704656490 instance=ExtResource("1_wuelf")]
+unique_name_in_owner = true
+layout_mode = 2
+control = "DOWN"
+key = "ARROW DOWN"
+action = &"player1_down"
+
+[node name="Player2" type="VBoxContainer" parent="Panel/VBoxContainer2/HBoxContainer" unique_id=1587082757]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 13
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer2/HBoxContainer/Player2" unique_id=1990817603]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PLAYER 2"
+
+[node name="P2KeyPanelUp" parent="Panel/VBoxContainer2/HBoxContainer/Player2" unique_id=1162325052 instance=ExtResource("1_wuelf")]
+unique_name_in_owner = true
+layout_mode = 2
+key = "Home"
+action = &"player2_up"
+
+[node name="P2KeyPanelDown" parent="Panel/VBoxContainer2/HBoxContainer/Player2" unique_id=1052946264 instance=ExtResource("1_wuelf")]
+unique_name_in_owner = true
+layout_mode = 2
+control = "DOWN"
+key = "End"
+action = &"player2_down"
+
+[node name="PressKeyContainer" type="VBoxContainer" parent="Panel/VBoxContainer2" unique_id=520021059]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer2/PressKeyContainer" unique_id=1146011593]
+layout_mode = 2
+text = "PRESS ANY KEY"
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer2/PressKeyContainer" unique_id=1577223829]
+layout_mode = 2
+text = "ESC TO CANCEL"
+
+[node name="KeyTakenContainer" type="VBoxContainer" parent="Panel/VBoxContainer2" unique_id=663498162]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer2/KeyTakenContainer" unique_id=142554234]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ALREADY SELECTED"
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer2/KeyTakenContainer" unique_id=442075291]
+layout_mode = 2
+text = "CHOOSE DIFFERENT KEY"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cd3l4q8m7ax6l"]
 
 [ext_resource type="Script" uid="uid://ceu6kf380heus" path="res://game/intro/intro.gd" id="1_fsy43"]
-[ext_resource type="PackedScene" uid="uid://bq5s1ahholprd" path="res://game/main_menu/main_menu.tscn" id="2_fsy43"]
+[ext_resource type="PackedScene" uid="uid://ng3r4lwkfdp8" path="res://game/menu.tscn" id="2_fsy43"]
 
 [sub_resource type="Animation" id="Animation_fsy43"]
 length = 0.001

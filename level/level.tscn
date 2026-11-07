@@ -9,14 +9,14 @@
 
 [sub_resource type="Resource" id="Resource_sp25j"]
 script = ExtResource("5_44x8d")
-action_up = "ui_home"
-action_down = "ui_end"
+action_up = "player2_up"
+action_down = "player2_down"
 metadata/_custom_type_script = "uid://dvj5nd5hlnaip"
 
 [sub_resource type="Resource" id="Resource_44x8d"]
 script = ExtResource("5_44x8d")
-action_up = "ui_up"
-action_down = "ui_down"
+action_up = "player1_up"
+action_down = "player1_down"
 metadata/_custom_type_script = "uid://dvj5nd5hlnaip"
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j1ws8"]

@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		animation_player.advance(step)
 	
 func _input(event: InputEvent) -> void:
-	if InputUtils.any_key_pressed(event) or InputUtils.mouse_click(event):
+	if InputUtils.any_key_pressed(event) or InputUtils.any_mouse_click(event):
 		switch_to_main_menu()
 
 func switch_to_main_menu() -> void:

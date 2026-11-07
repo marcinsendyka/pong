@@ -8,7 +8,7 @@ class_name Paddle extends CharacterBody2D
 		pc.position = $Middle.position
 
 func _physics_process(delta: float) -> void:
-	velocity -= velocity * delta * 8.0
+	velocity -= velocity * delta * 10.0
 	if pc.is_up():
 		velocity.y -= speed * delta
 	if pc.is_down():

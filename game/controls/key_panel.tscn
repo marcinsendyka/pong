@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://x5tsdqvvfd3q"]
+
+[ext_resource type="PackedScene" uid="uid://d2hwb2bcjceuu" path="res://common/focusable_panel.tscn" id="1_base"]
+[ext_resource type="Script" uid="uid://5fm4pamyhkk2" path="res://game/controls/key_panel.gd" id="2_key"]
+
+[node name="PanelContainer" unique_id=1873308584 instance=ExtResource("1_base")]
+script = ExtResource("2_key")
+control = "UP"
+key = "ARROW UP"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." index="0" unique_id=1000000001]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" index="0" unique_id=1000000002]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="Control" type="Label" parent="HBoxContainer/MarginContainer" index="0" unique_id=1000000003]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 12
+text = "UP"
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer" index="1" unique_id=1000000004]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="Key" type="Label" parent="HBoxContainer/MarginContainer2" index="0" unique_id=1000000005]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "ARROW UP"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
