@@ -15,6 +15,14 @@ func is_up() -> bool:
 func is_down() -> bool:
 	return direction == Vector2.DOWN
 
+func get_axis() -> float:
+	if is_up():
+		return -1.0
+	elif is_down():
+		return 1.0
+	else:
+		return 0.0
+	
 func _change_direction() -> void:
 	var r = randf()
 	if r > 0.8:

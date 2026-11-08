@@ -8,8 +8,5 @@ var _pc: PlayerControls
 func _init(p_pc: PlayerControls = default) -> void:
 	_pc = p_pc
 
-func is_up() -> bool:
-	return Input.is_action_pressed(_pc.action_up)
-
-func is_down() -> bool:
-	return Input.is_action_pressed(_pc.action_down)
+func get_axis() -> float:
+	return Input.get_axis(_pc.action_up, _pc.action_down)

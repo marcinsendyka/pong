@@ -9,8 +9,6 @@ class_name Paddle extends CharacterBody2D
 
 func _physics_process(delta: float) -> void:
 	velocity -= velocity * delta * 10.0
-	if pc.is_up():
-		velocity.y -= speed * delta
-	if pc.is_down():
-		velocity.y += speed * delta
+	var input = pc.get_axis()
+	velocity.y += speed * delta * input
 	move_and_slide()
