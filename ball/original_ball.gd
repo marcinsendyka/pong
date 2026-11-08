@@ -37,6 +37,7 @@ func _bounce(collider: Node2D) -> void:
 		vec = Vector2(direction.x * -1, angle)
 		speed = _easing_curve()
 		bounce += 1.0
+		collider.bounce()
 	elif collider.is_in_group("goal"):
 		pass  # expected, noop
 	else:

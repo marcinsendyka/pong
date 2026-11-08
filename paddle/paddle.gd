@@ -12,3 +12,6 @@ func _physics_process(delta: float) -> void:
 	var input = pc.get_axis()
 	velocity.y += speed * delta * input
 	move_and_slide()
+
+func bounce() -> void:
+	Input.start_joy_vibration(player, 0.5, 0.1, 0.1)
