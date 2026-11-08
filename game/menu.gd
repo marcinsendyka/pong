@@ -5,6 +5,7 @@ const CONTROLS = preload("uid://dlgw1jw5l2h21")
 var _main_menu: Node
 var _controls: Node
 
+
 func _ready() -> void:
 	_show_main_menu()
 
@@ -25,8 +26,8 @@ func _show_controls() -> void:
 	_drop(_main_menu)
 	add_child(controls)
 	_controls = controls
-	
-	
+
+
 func _drop(node: Node) -> void:
 	if is_instance_valid(node):
 		remove_child(node)

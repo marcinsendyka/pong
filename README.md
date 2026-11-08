@@ -39,4 +39,4 @@ in `tutorials/` directory you can find some sample scenes, showcasing nodes beha
 1. HUD, display score and countdown before match. [tutorial/hud](https://github.com/marcinsendyka/pong/tree/main/tutorial/hud). [Related blog post on gamedev-journal blog](https://gamedev-journal.xyz/posts/pong/hud/).
 
 
-[Pong official demo project] https://github.com/godotengine/godot-demo-projects/tree/master/2d/pong
+[Pong official demo project](https://github.com/godotengine/godot-demo-projects/tree/master/2d/pong)
