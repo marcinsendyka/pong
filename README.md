@@ -9,11 +9,14 @@ Project starts with a basic features - setting up ball, paddle and making it wor
 With each other addition there is more functions and these are more advanced.
 Current state of the game after all tutorials is implemented in [game scene](https://github.com/marcinsendyka/pong/blob/main/game/game.tscn).
 
+![Pong](screenshot.png "Pong gameplay")
+
 ## Features
 
 - Pong gameplay
 	- Single player against simple (but effective) AI opponent
 	- Two players mode
+- Controller support
 - Intro screen, main menu
 - Remap default keybindings 
 - Pause
