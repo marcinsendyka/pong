@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bqmxbn3c3qgvd" path="res://game/main_menu/main_menu.gd" id="1_f1bok"]
 [ext_resource type="PackedScene" uid="uid://bgicj5q0sxoy8" path="res://game/game.tscn" id="2_rlutr"]
-[ext_resource type="PackedScene" uid="uid://dlgw1jw5l2h21" path="res://game/controls/controls.tscn" id="3_rlneu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bn4et"]
 bg_color = Color(0, 0, 0, 1)
@@ -16,7 +15,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_f1bok")
 game_scene = ExtResource("2_rlutr")
-controls_scene = ExtResource("3_rlneu")
 
 [node name="Panel" type="Panel" parent="." unique_id=2090507053]
 layout_mode = 1

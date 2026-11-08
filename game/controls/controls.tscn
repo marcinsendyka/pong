@@ -121,4 +121,12 @@ text = "ALREADY SELECTED"
 layout_mode = 2
 text = "CHOOSE DIFFERENT KEY"
 
+[node name="Button" type="Button" parent="Panel/VBoxContainer2" unique_id=1089109855]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "BACK"
+
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="pressed" from="Panel/VBoxContainer2/Button" to="." method="_on_button_pressed"]

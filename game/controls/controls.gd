@@ -33,7 +33,7 @@ func _input(event: InputEvent) -> void:
 
 	if event is InputEventKey:
 		get_viewport().set_input_as_handled()
-		if not event.echo:
+		if event.pressed and not event.echo:
 			_input_provided.emit(event)
 
 
@@ -64,6 +64,7 @@ func change_key(panel: KeyPanel) -> void:
 	_is_waiting_for_input = true
 	press_key_container.visible = true
 	panel.key = "WAITING"
+	get_viewport().set_input_as_handled()
 	var input: InputEvent = await _input_provided
 	if not input.is_action_pressed(&"ui_cancel") and input is InputEventKey:
 		var key = input as InputEventKey
@@ -101,3 +102,7 @@ func _get_other_key_codes(panel: KeyPanel) -> Array[Key]:
 
 func _back_to_main_menu() -> void:
 	exit.emit()
+
+
+func _on_button_pressed() -> void:
+	_back_to_main_menu()

@@ -29,6 +29,5 @@ func _show_controls() -> void:
 	
 func _drop(node: Node) -> void:
 	if is_instance_valid(node):
-		print_debug("dropping: ", node.name)
 		remove_child(node)
 		node.queue_free()
