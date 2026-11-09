@@ -25,6 +25,8 @@ func _ready() -> void:
 	p_2_key_panel_down.selected.connect(change_key)
 	press_key_container.visible = false
 	key_taken_container.visible = false
+	
+	p_1_key_panel_up.grab_focus()
 
 
 func _input(event: InputEvent) -> void:
@@ -74,7 +76,10 @@ func change_key(panel: KeyPanel) -> void:
 				panel.action,
 				get_key(InputMap.action_get_events(panel.action))
 			)
-			InputMap.action_add_event(panel.action, key)
+			var new_mapping = InputEventKey.new()
+			new_mapping.physical_keycode = key.physical_keycode
+			new_mapping.device = -1
+			InputMap.action_add_event(panel.action, new_mapping)
 		else:
 			press_key_container.visible = false
 			key_taken_container.visible = true

@@ -81,5 +81,3 @@ autowrap_mode = 0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=77547915]
 libraries/ = SubResource("AnimationLibrary_4gn25")
 autoplay = &"fade_in"
-
-[connection signal="gui_input" from="." to="." method="_on_gui_input"]

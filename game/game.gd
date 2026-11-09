@@ -13,6 +13,7 @@ var _game_config: GameConfig
 func _ready() -> void:
 	var cfg: GameConfig = _get_config()
 	level.config = cfg
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 
 func _input(event: InputEvent) -> void:

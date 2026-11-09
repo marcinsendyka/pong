@@ -37,10 +37,12 @@ size_flags_vertical = 4
 theme_override_constants/separation = 20
 
 [node name="Resume" type="Button" parent="MarginContainer/VBoxContainer2" unique_id=168727229]
+unique_name_in_owner = true
 layout_mode = 2
 text = "RESUME"
 
 [node name="MainMenu" type="Button" parent="MarginContainer/VBoxContainer2" unique_id=1280533973]
+unique_name_in_owner = true
 layout_mode = 2
 text = "MAIN MENU"
 

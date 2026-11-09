@@ -8,6 +8,7 @@ var _controls: Node
 
 func _ready() -> void:
 	_show_main_menu()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 func _show_main_menu() -> void:
